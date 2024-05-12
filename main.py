@@ -1,13 +1,11 @@
 from fastapi import FastAPI
-import uvicorn
+from api.endpoints import items
 
 app = FastAPI()
 
+# Include the item endpoints
+app.include_router(items.router)
 
-@app.get("/")
-async def root():
-    return {"message": "Hello, World!"}
-
-
-if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+# import uvicorn
+# if __name__ == "__main__":
+#     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
