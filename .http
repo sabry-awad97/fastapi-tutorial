@@ -1,0 +1,31 @@
+###
+# GET request to retrieve all items
+GET http://localhost:8000/items/
+
+###
+# POST request to create a new item
+POST http://localhost:8000/items/
+Content-Type: application/json
+
+{
+  "name": "New Item",
+  "price": 10.99
+}
+
+###
+# GET request to retrieve a specific item by ID
+GET http://localhost:8000/items/{item_id}
+
+###
+# PUT request to update an item by ID
+PUT http://localhost:8000/items/{item_id}
+Content-Type: application/json
+
+{
+  "name": "Updated Item",
+  "price": 19.99
+}
+
+###
+# DELETE request to delete an item by ID
+DELETE http://localhost:8000/items/{item_id}

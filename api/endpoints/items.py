@@ -54,7 +54,7 @@ async def update_item(item_id: str, item: Item = Body(...)):
         {"_id": ObjectId(item_id)}, {"$set": item.model_dump()}
     )
     if updated_item.modified_count:
-        return {"id": item_id, **item.dict()}
+        return {"id": item_id, **item.model_dump()}
     raise HTTPException(status_code=404, detail="Item not found")
 
 
